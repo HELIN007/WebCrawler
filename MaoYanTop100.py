@@ -31,6 +31,7 @@ def parse_one_page(html):
         #      'time': item[3][5:],
         #     'score': item[4]+item[5]
         # }
+        # yield为了节省内存
         yield [item[0], item[1], item[2].strip()[3:], item[3][5:], item[4]+item[5]]
 
 def main(offset):
