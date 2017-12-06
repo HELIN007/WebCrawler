@@ -5,6 +5,7 @@ import codecs
 import simplejson as json
 import requests
 import time
+import pathlib
 
 
 def download(name, img_link):
@@ -20,7 +21,10 @@ def read_and_download():
             # img_link.append(item["img_link"])
             name = item["title"].replace('/', ' ') + '.jpg'
             img_link = item["img_link"]
-            download(name, img_link)
+            if pathlib.Path(name).exists():
+                print('已存在 %s' % name)
+            else:
+                download(name, img_link)
             print('下载完第 %d 个...' % id)
 
 def main():
