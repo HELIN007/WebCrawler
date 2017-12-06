@@ -9,10 +9,12 @@ import pathlib
 
 
 def download(name, img_link):
-    with codecs.open(name, 'wb') as img:
+    path = 'picture/'
+    with codecs.open(path + name, 'wb') as img:
         img.write(requests.get(img_link).content)
 
 def read_and_download():
+    path = 'picture/'
     with codecs.open('games.json', 'r', 'utf-8') as f:
         game_list = json.load(f)
         # len(game_list)可以得到长度
@@ -21,7 +23,7 @@ def read_and_download():
             # img_link.append(item["img_link"])
             name = item["title"].replace('/', ' ') + '.jpg'
             img_link = item["img_link"]
-            if pathlib.Path(name).exists():
+            if pathlib.Path(path + name).exists():
                 print('已存在 %s' % name)
             else:
                 download(name, img_link)
