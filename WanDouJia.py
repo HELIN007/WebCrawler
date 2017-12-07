@@ -1,5 +1,6 @@
 # -*- coding=utf-8 -*-
 # Python 3.6
+# 使用Beautifulsoup库
 
 import time
 from bs4 import BeautifulSoup
