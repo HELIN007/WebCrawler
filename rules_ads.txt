@@ -1,4 +1,10 @@
 # Update time : 2021/04/30
 
+
+# ads
 DOMAIN, pubads.g.doubleclick.net, REJECT
+DOMAIN, zhimg.com, REJECT
+
+
+# rules
 
