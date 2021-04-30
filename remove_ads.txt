@@ -1,0 +1,4 @@
+# Update time : 2021/04/30
+
+DOMAIN, pubads.g.doubleclick.net, REJECT
+
